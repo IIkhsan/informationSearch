@@ -15,10 +15,9 @@ public class Crawler {
         int j = 1;
         PrintWriter indexWriter = new PrintWriter("index.txt");
         for (int i = 10; i <= 31; i++) {
-            String url = "https://lenta.ru/news/2017/07/" + i + "/";
+            String url = "https://lenta.ru/news/2018/07/" + i + "/";
             Document document = Jsoup.connect(url).get();
             String text = document.select(".g-layout div").text();
-            System.out.println(text);
             String docName = j + ".txt";
             PrintWriter writer = new PrintWriter(docName);
             writer.println(text);
