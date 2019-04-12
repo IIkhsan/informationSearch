@@ -9,16 +9,16 @@ public class Index {
 
         Map<String, TreeSet<Integer>> results = new LinkedHashMap<String, TreeSet<Integer>>();
 
-        for (int i = 1; i <= 22; i++) {
+        for (int i = 1; i <= 171; i++) {
             String name = "/Users/ilasihsanov/Desktop/qwweq/src/info_search/lemm/" + i + ".txt";
             Scanner scanner = new Scanner(new File(name));
 
-            String line = scanner.nextLine().trim();//������� ��������� �������
+            String line = scanner.nextLine().trim();//
             String lineData[] = line.split(" ");
 
             for (String aLineData : lineData) {
-                if (results.containsKey(aLineData)) {   //���� map �������� ����� ����
-                    TreeSet<Integer> hasResults = results.get(aLineData);  //������� �������� �����
+                if (results.containsKey(aLineData)) {   //
+                    TreeSet<Integer> hasResults = results.get(aLineData);  //
                     hasResults.add(i);
                     results.put(aLineData, hasResults);
 

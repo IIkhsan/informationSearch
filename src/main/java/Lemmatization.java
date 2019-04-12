@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class Lemmatization {
     public static void main(String[] args) throws FileNotFoundException {
         Porter porter = new Porter();
-        for (int i = 1; i <= 22; i++) {
+        for (int i = 1; i <= 171; i++) {
             Scanner scanner = new Scanner(new File("/Users/ilasihsanov/Desktop/qwweq/src/info_search/tokens/" + i + ".txt"));
-            PrintWriter writer = new PrintWriter(i + ".txt");
+            PrintWriter writer = new PrintWriter("/Users/ilasihsanov/Desktop/qwweq/src/info_search/lemm/" + i + ".txt");
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine().trim();
                 String lineData[] = line.split(" ");

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Tokens {
     public static void main(String[] args) throws FileNotFoundException {
-        for (int i = 1; i <= 22; i++) {
+        for (int i = 1; i <= 171; i++) {
             Scanner scanner = new Scanner(new File("/Users/ilasihsanov/Desktop/qwweq/src/info_search/docs/" + i + ".txt"));
             PrintWriter writer = new PrintWriter("/Users/ilasihsanov/Desktop/qwweq/src/info_search/tokens/" + i + ".txt");
             while (scanner.hasNextLine()) {
@@ -30,6 +30,8 @@ public class Tokens {
                     lineData[j] = lineData[j].replace("�", "");
                     lineData[j] = lineData[j].replace("�", "");
                     lineData[j] = lineData[j].replace("�", "");
+                    lineData[j] = lineData[j].replace("«", "");
+                    lineData[j] = lineData[j].replace("»", "");
                     lineData[j] = lineData[j].toLowerCase();
                     writer.print(lineData[j] + " ");
                 }
