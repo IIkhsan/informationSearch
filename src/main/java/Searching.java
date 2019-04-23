@@ -19,14 +19,14 @@ public class Searching {
             if (text.isEmpty()) {
                 System.out.println("No results");
             }
-            //�������������� ���� � ������ ��������������� ����
+            //
             String words[] = text.split(" ");
             for (int i = 0; i < words.length; i++) {
                 words[i] = words[i].replaceAll("\\,|\\.|\\?|\\-|\\=|\\+|\\(|\\)|\\*|\\/|\\!|\"", "");
                 words[i] = porter.stem(words[i]) + ".txt";
             }
 
-            //�������� ������ � ������� ������
+            //
             ArrayList<String> filesList = new ArrayList<>();
             File myFolder = new File(PATH + "invert");
             File[] files = myFolder.listFiles();
@@ -34,7 +34,7 @@ public class Searching {
                 filesList.add(file.getName());
             }
 
-            //���� ����� ����� ����
+            //
             if (words.length == 1) {
                 ArrayList<String> list = new ArrayList<>();
                 if (filesList.contains(words[0])) {
@@ -54,11 +54,11 @@ public class Searching {
                     System.out.println("No results");
                 }
             }
-            //���� ���� �����
+            //
             else if (words.length > 1) {
-                //���� � �����������
+                //
                 ArrayList<String> resOfCon = new ArrayList<>();
-                //������ ���� ��� ���������
+                //
                 List<String> firstList = new ArrayList<>();
                 if (filesList.contains(words[0])) {
                     String name = PATH + "invert/" + words[0];
@@ -67,7 +67,7 @@ public class Searching {
                     firstList = Arrays.asList(lineData);
                 }
 
-                //������ �� ���� ������
+                //
                 for (int i = 1; i < words.length; i++) {
                     if (filesList.contains(words[i])) {
                         String name = PATH + "invert/" + words[i];
@@ -76,7 +76,7 @@ public class Searching {
                         List<String> list = Arrays.asList(lineData);
 
                         ArrayList<String> buf = new ArrayList<String>();
-                        //�������� ����������� �����������
+                        //
                         if (i == 1) {
                             for (String elem : list) {
                                 if (firstList.contains(elem)) {
@@ -95,7 +95,7 @@ public class Searching {
                     }
                 }
                 if (!resOfCon.isEmpty()) {
-                    //���������� ����� � ������
+                    //
                     for (String number : resOfCon) {
                         String name1 = number + ".txt";
                         if (index.containsKey(name1)) {
